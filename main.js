@@ -12,12 +12,22 @@ let searching = document.querySelector(".searching");
 //back icon
 let back =document.querySelector(".back");
 submit.addEventListener("click",function () {
-      searching.classList.toggle("hidden");
-      getDataApi();
-      clear();
+      if(input.value != ''){
+        searching.classList.remove("hidden");
+        searching.innerHTML = '<p class="p-3 bg-green-200 text-green-500">searching</p>';
+        getDataApi();
+        clear();
+      }else{
+        searching.classList.remove("hidden");
+        searching.innerHTML = '<p class="p-3 bg-green-200 text-green-500">please enter city name</p>';
+      }
 });
 
-back.addEventListener("click",hiddenSection);
+back.addEventListener("click",function () {
+   hiddenSection();
+   searching.classList.add("hidden");
+
+});
 
 //fecth weather
 let apiKey = "2138f0dbbcec163a4b8a44a0215a3bd6";
@@ -36,15 +46,14 @@ function getDataApi() {
 function handelData(data){
      if(data.cod != "404"){
        searching.classList.toggle("hidden");
-       weatherDegree.innerHTML = ((5/9)*data.main.temp-32).toFixed(2);
+       weatherDegree.innerHTML = data.main.temp;
        cityName.innerHTML = data.name;
        weatherState.innerHTML = data.weather[0].description;
        hiddenSection();
-      console.log(data);
+      
     }else {
-       searching.innerHTML = "please enter valid city";
-       searching.classList.toggle("bg-red-200");
-       searching.classList.toggle("text-red-500");
+         searching.innerHTML = '<p class="p-3 bg-red-200 text-red-600">please enter a vaild city</p>';
+
     }
 }
 
@@ -56,6 +65,10 @@ function hiddenSection() {
 
 function clear() {
    input.value ='';
-   searching.classList.toggle("bg-red-200");
-   searching.classList.toggle("text-red-500");
+   input.focus();
+
 }
+
+(function () {
+   input.focus();
+})();
