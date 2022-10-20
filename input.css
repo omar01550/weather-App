@@ -21,26 +21,3 @@ header{
 }
 
 /* or span */
-
-.or::before{
-   content: "";
-   position: absolute;
-   left: 150%;
-   top:50%;
-   width:70px;
-   height: 2px;
-   background-color: gray;
-   opacity: 30%;
-
-}
-.or::after{
-   content: "";
-   position: absolute;
-   left: -80px;
-   top:50%;
-   width:70px;
-   height: 2px;
-   background-color: gray;
-   opacity: 30%;
-
-}

@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="./output.css">
     <title>WEATHER APP</title>
@@ -13,7 +15,7 @@
                         <label class="ml-2 capitalize">weather app</label>
                   </header>
                   <div class="py-3">
-
+                        <div class="p-3 bg-green-200 text-green-600 hidden searching">Searching</div>
                         <input type="text" name="" value="" class="text-center text-gray-500 mt-2 mx-auto block border-solid border-blue-300 border-2 rounded-full outline-3 outline-blue-300 outline-solid" placeholder="Enter City Name">
                         <span class="mt-2 relative text-gray-500 text-center or block">or</span>
                         <button type="button" name="button" class="submit text-white rounded-md mx-auto px-4 py-2 bg-blue-400 mt-2 capitalize select-none">get device location</button>
@@ -27,9 +29,9 @@
 
                   <section class="text-center [&>*]:mt-1">
                        <i class="fa fa-cloud text-blue-500 mt-8 block text-4xl"></i>
-                       <h1 class="text-3xl">299.39 <span>C</span></h1>
-                       <p class="text-gray-600">few cloud</p>
-                       <p class="text-gray-600">smannoud</p>
+                       <h1 class="text-3xl weather-degree">299.39 <span>C</span></h1>
+                       <p class="text-gray-600 weather-state">few cloud</p>
+                       <p class="text-gray-600 city-name">smannoud</p>
                        <div class="flex border-gray border-t-2 border-solid">
                             <div class="left w-6/12 h-10">
 
